@@ -5,14 +5,9 @@
 
 #define NUMBER_OF_CARDS  (NUMBER_OF_FLASH_CARDS)
 
-//#define NEXT_INTERVAL  (30)    // seconds
-//#define THRESHOLD      (800)   // mg
 
 static Window *window;
-//static GBitmap *image_front;
-//static BitmapLayer *image_layer_front;
 static TextLayer *text_layer;
-//static uint8_t seconds_tick = 0;
 static CardBack_t card_back;
 static CardBack_t card_front;
 
@@ -23,8 +18,6 @@ static CardBack_t card_front;
 static enum side_t current_side;
 static enum card_t current_card;
 static Window *window;
-//static GBitmap *image_front;
-//static BitmapLayer *image_layer_front;
 static CardBack_t card_back;
 static CardBack_t card_front;
 static bool card_used[NUMBER_OF_CARDS];
