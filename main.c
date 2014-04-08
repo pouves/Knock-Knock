@@ -1,6 +1,5 @@
 #include <pebble.h>
 #include "cards.h"
-	
 #include "content.h"
 
 #define NUMBER_OF_CARDS  (NUMBER_OF_FLASH_CARDS)
@@ -52,21 +51,17 @@ void init_cards(Window *main_window,
 
 void deinit_cards(void) {
   layer_remove_child_layers(window_get_root_layer(window));
-  //bitmap_layer_destroy(image_layer_front);
   text_layer_destroy(card_front.front_line_one);
   text_layer_destroy(card_front.front_line_two);
   text_layer_destroy(card_back.back_line_one);
-  //free_card_image();
 }
 
 enum side_t flip_card(void) {
   if(current_side == FRONT) {
-    //layer_set_hidden((Layer*)image_layer_front, true);
 	hide_card_text_front();
     show_card_text();
     current_side = BACK;
   } else {
-    //layer_set_hidden((Layer *)image_layer_front, false);
     hide_card_text();
 	show_card_text_front();
     current_side = FRONT;
@@ -185,7 +180,6 @@ void accel_tap_handler(AccelAxisType axis, int32_t direction) {
 	}
 }
 
-//static void accel_data_handler(AccelData *data, uint32_t num_samples) {
 void up_click_handler(ClickRecognizerRef recognizer, void *context) {
 	
 	//nothing for now
